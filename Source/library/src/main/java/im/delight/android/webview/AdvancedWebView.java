@@ -113,6 +113,15 @@ public class AdvancedWebView extends WebView {
 		setListener(activity, listener, REQUEST_CODE_FILE_PICKER);
 	}
 
+	@Override
+	public void setOverScrollMode(int mode) {
+		try {
+			super.setOverScrollMode(mode);
+		} catch (Exception e) {
+			Log.d("AdvancedWebview", "setOverScrollMode: "+e.getMessage());
+		}
+	}
+
 	public void setListener(final Activity activity, final Listener listener, final int requestCodeFilePicker) {
 		if (activity != null) {
 			mActivity = new WeakReference<Activity>(activity);
